@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from ingredientes.views import Ingredientes_APIView, Ingredientes_APIView_Detail
+
+app_name = 'ingredientes'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('ingredientes', Ingredientes_APIView.as_view()),
+    path('ingredientes/<int:pk>/', Ingredientes_APIView_Detail.as_view()),
 ]
+
