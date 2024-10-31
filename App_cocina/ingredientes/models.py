@@ -17,7 +17,20 @@ class Categorias(models.Model):
 class Dificultades(models.Model):
     NomDif = models.CharField(max_length=10)
 
-# class Recetas 
+class Recetas(models.Model):
+    NomRec = models.CharField(max_length=40)
+    ElRec = models.CharField(max_length=600)
+    TREc = models.CharField(max_length=15)
+    DifId_fk = models.ForeignKey(Dificultades, on_delete=models.CASCADE)
+    CatId_fk = models.ForeignKey(Categorias, on_delete=models.CASCADE)
 
-# class IngredientesRecetas
+class IngredientesRecetas(models.Model):
+    IngId_fk = models.ForeignKey(Ingredientes, on_delete= models.CASCADE)
+    PesoIng = models.IntegerField(default=0)
+    RecId = models.ForeignKey(Recetas, on_delete=models.CASCADE)
+
+
+
+
+
      

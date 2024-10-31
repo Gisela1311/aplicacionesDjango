@@ -30,6 +30,10 @@ urlpatterns = [
     path('categorias/<int:pk>/', Categorias_APIView_Detail.as_view()),
     path('dificultades', Dificultades_APIView.as_view()),
     path('dificultades/<int:pk>/', Dificultades_APIView_Detail.as_view()),
+    path('recetas', Recetas_APIView.as_view()),
+    path('recetas/<int:pk>/', Recetas_APIView_Detail.as_view()),
+    path('ingredientesrecetas', IngredientesRecetas_APIView.as_view()),
+    path('ingredientesrecetas/<int:pk>/', IngredientesRecetas_APIView_Detail.as_view()),
 
 ]
 

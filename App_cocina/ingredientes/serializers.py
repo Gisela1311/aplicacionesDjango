@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Temporadas, Ingredientes, Categorias, Dificultades
+from .models import Temporadas, Ingredientes, Categorias, Dificultades, Recetas, IngredientesRecetas
 
 class IngredientesSerializers(serializers.ModelSerializer):
     
@@ -31,4 +31,16 @@ class DificultadesSerializers (serializers.ModelSerializer):
         model = Dificultades
         fields = '__all __'
         # exclude = ['is_removed', 'created', 'modified']
+
+class RecetasSerializers (serializers.ModelSerializer):
+    NomRec = serializers.CharField(max_length=40)
+    class Meta:
+        model: Recetas 
+        fields = '__all__'
+
+class IngredientesRecetasSerializers (serializers.ModelSerializer):
+    class Meta:
+        model = IngredientesRecetas
+        fields = '__all__'
+
     
