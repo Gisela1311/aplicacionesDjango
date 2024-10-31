@@ -16,11 +16,15 @@ class Ingredientes_APIView(APIView):
         return Response(serializer.data)
 
     def post(self, request, format=None):
-        serializer = IngredientesSerializers(data=request.data)
+        if isinstance(request.data, list):
+            serializer = CategoriasSerializers(data=request.data, many=True)
+        else:
+            serializer = CategoriasSerializers(data=request.data, many=False)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
 class Ingredientes_APIView_Detail(APIView):
     def get_object(self, pk):
         try:
@@ -88,7 +92,7 @@ class Categorias_APIView(APIView):
         if isinstance(request.data, list):
             serializer = CategoriasSerializers(data=request.data, many=True)
         else:
-            serializar = CategoriasSerializers(data=request.data, many=False)
+            serializer = CategoriasSerializers(data=request.data, many=False)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -123,7 +127,10 @@ class Dificultades_APIView(APIView):
         
         return Response(serializer.data)
     def post(self, request, format=None):
-        serializer = DificultadesSerializers(data=request.data)
+        if isinstance(request.data, list):
+            serializer = DificultadesSerializers(data=request.data, many=True)
+        else:
+            serializer = DificultadesSerializers(data=request.data, many=False)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -158,7 +165,10 @@ class Recetas_APIView(APIView):
         
         return Response(serializer.data)
     def post(self, request, format=None):
-        serializer = RecetasSerializers(data=request.data)
+        if isinstance(request.data, list):
+            serializer = RecetasSerializers(data=request.data, many=True)
+        else:
+            serializer = RecetasSerializers(data=request.data, many=False)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -193,7 +203,10 @@ class IngredientesRecetas_APIView(APIView):
         
         return Response(serializer.data)
     def post(self, request, format=None):
-        serializer = IngredientesRecetasSerializers(data=request.data)
+        if isinstance(request.data, list):
+            serializer = IngredientesRecetasSerializers(data=request.data, many=True)
+        else:
+            serializer = IngredientesRecetasSerializers(data=request.data, many=False)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)

@@ -12,24 +12,26 @@ class IngredientesSerializers(serializers.ModelSerializer):
         # exclude = ['is_removed', 'created', 'modified']
     
 class TemporadasSerializers (serializers.ModelSerializer):
-    class Meta:
+    # TempId_fk = serializers.SlugRelatedField(queryset=Temporadas.objects.all(), slug_field='NomTemp')
+     class Meta:
         model = Temporadas
-        fields = '__all __'
+        fields = '__all__'
         # exclude = ['is_removed', 'created', 'modified']
 
 class CategoriasSerializers (serializers.ModelSerializer):
-    NomCat = serializers.CharField(max_length=10)
+    # TempId_fk = serializers.SlugRelatedField(queryset=Temporadas.objects.all(), slug_field='NomTemp')
+    
 
     class Meta:
         model = Categorias
-        fields = '__all __'
+        fields = '__all__'
         # exclude = ['is_removed', 'created', 'modified']
 
 class DificultadesSerializers (serializers.ModelSerializer):
     NomDif = serializers.CharField(max_length=10)
     class Meta:
         model = Dificultades
-        fields = '__all __'
+        fields = '__all__'
         # exclude = ['is_removed', 'created', 'modified']
 
 class RecetasSerializers (serializers.ModelSerializer):
