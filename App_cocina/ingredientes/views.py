@@ -85,7 +85,10 @@ class Categorias_APIView(APIView):
         
         return Response(serializer.data)
     def post(self, request, format=None):
-        serializer = CategoriasSerializers(data=request.data)
+        if isinstance(request.data, list):
+            serializer = CategoriasSerializers(data=request.data, many=True)
+        else:
+            serializar = CategoriasSerializers(data=request.data, many=False)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
