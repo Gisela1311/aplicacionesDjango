@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en=US">
+    <head>
+        <meta charset="utf-8" />
+        <title>Ingredientes recetas detalle</title>
+    </head>
+    <body>
+        <h1>{{ingrediente_receta.IngId}}</h1>
+
+        <h2> La categoria {{ ingrediente_receta.IngId }} tiene el código {{ ingrediente_receta.pk}} !!!</h2>
+        <a href="{% url 'webcook:ingredientes_receta' %}"> volver</a>
+    </body>
+</html>

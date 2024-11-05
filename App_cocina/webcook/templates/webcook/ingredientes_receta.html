@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Ingredientes recetas</title>
+    </head>
+    <body>
+        {% if lista_ingredientes_receta %}
+        <ul>
+            {% for ingrediente_receta in lista_ingredientes_receta %}
+            <li>
+                <a href="{% url 'webcook:ingrediente_recetadetalle' ingrediente_receta.id %}">{{ ingrediente_receta.IngId_fk}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p>No hay ingredientes receta definidos.</p>
+        {% endif %}
+    </body>
+</html>

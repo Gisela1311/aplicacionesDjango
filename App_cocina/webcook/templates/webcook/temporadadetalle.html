@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en=US">
+    <head>
+        <meta charset="utf-8" />
+        <title>Temporada detalle</title>
+    </head>
+    <body>
+        <h1>{{temporada.NomTemp}}</h1>
+
+        <h2> La temporada {{ temporada.NomTemp }} tiene el código {{ temporada.pk}} !!!</h2>
+        <a href="{% url 'webcook:temporadas' %}"> volver</a>
+    </body>
+</html>

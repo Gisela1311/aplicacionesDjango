@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Recetas</title>
+    </head>
+    <body>
+        {% if lista_recetas %}
+        <ul>
+            {% for receta in lista_recetas %}
+            <li>
+                <a href="{% url 'webcook:recetadetalle' receta.id %}">{{ receta.NomRec}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p>No hay recetas definidas.</p>
+        {% endif %}
+    </body>
+</html>

@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en=US">
+    <head>
+        <meta charset="utf-8" />
+        <title>Receta detalle</title>
+    </head>
+    <body>
+        <h1>{{receta.NomRec}}</h1>
+
+        <h2> La receta {{ receta.NomRec }} tiene el código {{ receta.pk}} !!!</h2>
+        <a href="{% url 'webcook:recetas' %}"> volver</a>
+    </body>
+</html>

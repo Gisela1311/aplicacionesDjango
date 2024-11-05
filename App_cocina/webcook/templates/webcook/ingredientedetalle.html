@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en=US">
+    <head>
+        <meta charset="utf-8" />
+        <title>ingrediente detalle</title>
+    </head>
+    <body>
+        <h1>{{ingrediente.NomIng}}</h1>
+
+        <h2> El ingrediente {{ ingrediente.NomIng }} tiene el código {{ ingrediente.pk}} !!!</h2>
+        <a href="{% url 'webcook:ingredientes' %}"> volver</a>
+    </body>
+</html>

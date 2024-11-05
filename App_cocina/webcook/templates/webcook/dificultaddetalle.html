@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en=US">
+    <head>
+        <meta charset="utf-8" />
+        <title>Dificultad detalle</title>
+    </head>
+    <body>
+        <h1>{{dificultad.DifNom}}</h1>
+
+        <h2> La dificultad {{ dificultad.NomDif }} tiene el código {{ dificultad.pk}} !!!</h2>
+        <a href="{% url 'webcook:dificultades' %}"> volver</a>
+    </body>
+</html>
