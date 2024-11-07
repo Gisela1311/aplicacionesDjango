@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Facturas</title>
+        
+    </head>
+    <body>
+        <h1>Lista de facturas </h1>
+        {% if lista_factura %}
+        <ul>
+            {% for factura in lista_factura %}
+
+              
+                    <li> <a href="{% url 'visuafact:facturadetalle' factura.id %}">Factura {{ factura.NumF}},{{factura.Cliente}}</a> </li>
+                <br>
+            {% endfor %}
+        </ul>
+        
+        {% else %}
+            <p>No se han introducido facturas.</p>
+        {% endif %}
+    </body>
+</html>

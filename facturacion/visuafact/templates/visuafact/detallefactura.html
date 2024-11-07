@@ -1,0 +1,35 @@
+<!-- <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Factura {{ factura.id }}</title>
+</head>
+<body>
+    <h1>Factura {{ factura.id }}</h1>
+    <p>Cliente: {{ factura.cliente }}</p>
+    <p>Fecha: {{ factura.fecha_factura }}</p>
+    <p>Total: {{ factura.total }} €</p>
+
+    <h2>Detalles de la Factura</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre del Producto</th>
+                <th>Precio</th>
+                <th>Tipo de Producto</th>
+                <th>Precio con IVA</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for detalle in detalles %}
+                <tr>
+                    <td>{{ detalle.nombre_producto }}</td>
+                    <td>{{ detalle.precio_producto }} €</td>
+                    <td>{{ detalle.tipo_producto }}</td>
+                    <td>{{ detalle.precio_con_iva }} €</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html> -->
