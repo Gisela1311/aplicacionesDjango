@@ -5,16 +5,27 @@
         <title>Ingredientes recetas</title>
     </head>
     <body>
+        <h1>INGREDIENTES DE LA RECETA &#127860;</h1>
         {% if lista_ingredientes_receta %}
-        <ul>
-            {% for ingrediente_receta in lista_ingredientes_receta %}
-            <li>
-                <a href="{% url 'webcook:ingrediente_recetadetalle' ingrediente_receta.id %}">{{ ingrediente_receta.IngId_fk}}</a>
-            </li>
-            {% endfor %}
-        </ul>
+                
+                <table border="1" width="30%" style="text-align: center;">
+                    <!-- <thead>{{ forloop.counter }}
+                        <tr><th>{{ingredientereceta.RecId}}</th></tr>
+                    {% endfor %}
+                    </thead> -->
+                    <tbody>
+                        {% for ingredientereceta in lista_ingredientes_receta %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td><a href="{% url 'webcook:ingredientes_recetadetalle' ingredientereceta.id %}">{{ ingredientereceta.IngId_fk}}</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table> 
+        
         {% else %}
             <p>No hay ingredientes receta definidos.</p>
-        {% endif %}
+        {% endif %}        
+        
     </body>
 </html>

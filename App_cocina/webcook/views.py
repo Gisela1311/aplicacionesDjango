@@ -89,7 +89,7 @@ class IngredientesRecetasView(generic.ListView):
 
     def get_queryset(self):
         return IngredientesRecetas.objects.all()
-
+    
 class IngredientesRecetasDetalleView(generic.DateDetailView):
     model= IngredientesRecetas
     template_name = "webcook/ingrediente_recetadetalle.html"
@@ -97,3 +97,4 @@ class IngredientesRecetasDetalleView(generic.DateDetailView):
     def get(self, request, pk, format=None):
         ingredientereceta = get_object_or_404(IngredientesRecetas, id = pk)
         return render(request, "webcook/ingrediente_recetadetalle.html", {"ingredientereceta":ingredientereceta})
+

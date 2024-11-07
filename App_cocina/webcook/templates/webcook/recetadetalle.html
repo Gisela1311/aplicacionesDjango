@@ -7,7 +7,32 @@
     <body>
         <h1>{{receta.NomRec}}</h1>
 
-        <h2> La receta {{ receta.NomRec }} tiene el código {{ receta.pk}} !!!</h2>
+        <h2> La receta {{ receta.NomRec }} es perfecta para esta época del año. </h2>
+        
+        <p>
+            <h3>Tiempo de elaboración: {{ receta.TREc }}</h3>    
+        </p>
+        <p>
+            <h3>Dificultad: {{receta.DifId_fk}}</h3>    
+        </p>
+        <p>
+            <h3>Categoria: {{receta.CatId_fk}}</h3>    
+        </p>
+        <p>
+            <h3>Elaboración: {{receta.ElRec}}</h3>    
+        </p>
+
+        <table border="1"> 
+            
+            <tbody> {% for ingrediente in lista_ingredientes %} 
+                <tr> <td>{{ forloop.counter }}</td>
+                     <td><a href="{% url 'webcook:ingredientesdetalle' ingrediente.id %}">{{ ingrediente.NomIng }}</a></td> 
+                </tr> 
+                {% endfor %} 
+            </tbody> 
+        </table>
+
+        <h2>&#127802;</h2>
         <a href="{% url 'webcook:recetas' %}"> volver</a>
     </body>
 </html>

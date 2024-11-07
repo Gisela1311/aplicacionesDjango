@@ -5,12 +5,13 @@
         <title>Temporadas</title>
     </head>
     <body>
+        <h1>TEMPORADAS &#127809;</h1>
         {% if lista_temporadas %}
         <ul>
             {% for temporada in lista_temporadas %}
-            <li>
-                <a href="{% url 'webcook:temporadadetalle' temporada.id %}">{{ temporada.NomTemp}}</a>
-            </li>
+                {{ forloop.counter }}
+                    <a href="{% url 'webcook:temporadadetalle' temporada.id %}">{{ temporada.NomTemp}}</a>
+                <br>
             {% endfor %}
         </ul>
         {% else %}

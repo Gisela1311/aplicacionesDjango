@@ -5,12 +5,13 @@
         <title>Recetas</title>
     </head>
     <body>
+        <h1>MIS RECETAS PREFERIDAS &#127775;</h1>
         {% if lista_recetas %}
         <ul>
             {% for receta in lista_recetas %}
-            <li>
-                <a href="{% url 'webcook:recetadetalle' receta.id %}">{{ receta.NomRec}}</a>
-            </li>
+                {{ forloop.counter }}
+                    <a href="{% url 'webcook:recetadetalle' receta.id %}">{{ receta.NomRec}}</a>
+                <br>
             {% endfor %}
         </ul>
         {% else %}

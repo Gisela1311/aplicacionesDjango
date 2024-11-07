@@ -16,7 +16,8 @@ urlpatterns = [
     path('dificultades/<int:pk>/', DificultadesDetalleView.as_view(), name='dificultaddetalle'),
     path('recetas', RecetasView.as_view(), name = 'recetas'),
     path('recetas/<int:pk>/', RecetasDetalleView.as_view(), name= 'recetadetalle'),
-    path('ingredientesrecetas', IngredientesRecetasView.as_view(), name = 'ingredientes_receta'),
-    path('ingredientesrecetas/<int:pk>/', IngredientesRecetasDetalleView.as_view(), name='ingrediente_recetadetalle'),
+    path('ingredientesreceta', IngredientesRecetasView.as_view(), name = 'ingredientes_receta'),
+    path('ingredientesreceta/<int:pk>/', IngredientesRecetasDetalleView.as_view(), name='ingredientes_recetadetalle'),
+
 
 ]

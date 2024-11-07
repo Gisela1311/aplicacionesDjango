@@ -5,12 +5,13 @@
         <title>Dificultades</title>
     </head>
     <body>
+        <h1>NIVELES DE DIFICULTAD &#128681;</h1>
         {% if lista_dificultades %}
         <ul>
             {% for dificultad in lista_dificultades %}
-            <li>
-                <a href="{% url 'webcook:dificultaddetalle' dificultad.id %}">{{ dificultad.NomDif}}</a>
-            </li>
+                {{ forloop.counter }}
+                    <a href="{% url 'webcook:dificultaddetalle' dificultad.id %}">{{ dificultad.NomDif}}</a>
+                <br>
             {% endfor %}
         </ul>
         {% else %}

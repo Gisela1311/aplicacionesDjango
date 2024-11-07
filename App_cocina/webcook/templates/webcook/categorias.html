@@ -5,12 +5,13 @@
         <title>Categorias</title>
     </head>
     <body>
+        <h1>CATEGORIAS &#128165;</h1>
         {% if lista_categorias %}
         <ul>
             {% for categoria in lista_categorias %}
-            <li>
-                <a href="{% url 'webcook:categoriadetalle' categoria.id %}">{{ categoria.NomCat}}</a>
-            </li>
+                {{ forloop.counter }}
+                    <a href="{% url 'webcook:categoriadetalle' categoria.id %}">{{ categoria.NomCat}}</a>
+                <br>
             {% endfor %}
         </ul>
         {% else %}

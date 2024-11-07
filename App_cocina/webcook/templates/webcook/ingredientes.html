@@ -5,12 +5,13 @@
         <title>Ingredientes</title>
     </head>
     <body>
+        <h1>INGREDIENTES 	&#127822;</h1>
         {% if lista_ingredientes %}
         <ul>
             {% for ingrediente in lista_ingredientes %}
-            <li>
-                <a href="{% url 'webcook:ingredientedetalle' ingrediente.id %}">{{ ingrediente.NomIng}}</a>
-            </li>
+                {{ forloop.counter }}
+                    <a href="{% url 'webcook:ingredientedetalle' ingrediente.id %}">{{ ingrediente.NomIng}}</a>
+                    <br>
             {% endfor %}
         </ul>
         {% else %}
