@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Facturas</title>
+        
+    </head>
+    <body>
+        <h1>Lista de facturas &#128196;</h1>
+        {% if lista_facturas %}
+        <ul>
+            {% for facturas in lista_facturas %}
+
+              
+                    <li> <a href="{% url 'factvisual:facturasdetalle' facturas.id %}"> &#128203; Factura {{facturas.NumF}} de: {{ facturas.NomProv}} con fecha: {{facturas.FechaF}}</a> </li>
+                <br>
+            {% endfor %}
+        </ul>
+        
+        {% else %}
+            <p>No se han introducido facturas.</p>
+        {% endif %}
+    </body>
+</html>

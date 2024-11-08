@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en=US">
+    <head>
+        <meta charset="utf-8" />
+        <title>Detalle Facturas </title>
+        <style> 
+            .container { 
+                display: block; 
+                
+                /* inline-block; */
+                /* flex; flex-wrap: wrap;  */
+            } 
+            .column { 
+                flex: 50%; padding: 10px; 
+            } 
+            .table-container { 
+                width: 100%; 
+                margin-top: 10px; 
+            } 
+            table { 
+                width: 60%; 
+                border-collapse: collapse; 
+            } 
+            th, td { 
+                padding: 8px; 
+                text-align: left; 
+                border-bottom: 1px solid #04080c; 
+            } 
+            th { 
+                background-color: #02a36e; 
+            } 
+            tr:nth-child(even) { 
+                background-color: #b8e9d6; 
+            } 
+
+            </style>
+    </head>
+    <body>
+        <h1>Número de factura:{{facturas.NumF}}</h1>
+        <div class="container"> 
+            <div class="column">
+                <h2>&#128204; Datos del Proveedor</h2>
+                <p><strong>Nombre Proveedor:</strong> {{ facturas.NomProv }} </p>
+                <p><strong>Dirección Proveedor: </strong> {{ facturas.DireP }} </p>
+                <p><strong>Email Proveedor: </strong> {{ facturas.Mail }} </p>
+
+            </div>
+            <div class="column">
+                <h2>&#128204; Datos de la factura</h2>
+                <p><strong>Centro de coste: </strong> {{ facturas.CCoste }} </p>
+                <p><strong>Fecha factura: </strong> {{ facturas.FechaF }} </p>
+                <p><strong>Fecha entrada al sistema: </strong> {{ facturas.FechaE }} </p>
+                <p><strong>Fecha modificación: </strong> {{ facturas.FechaM }} </p>
+            </div>
+        
+        <div class="table-container">    
+            <h1>Detalles de la Factura</h1> 
+            <table border="1"> 
+                <thead> 
+                    <tr> 
+                        <th>Nombre del Producto</th> 
+                        <th>Precio</th> 
+                        
+                    </tr> 
+                </thead> 
+                <tbody> 
+                    {% for detalles in detalles %} 
+                    <tr> 
+                        <td>{{forloop.counter|stringformat:"03d"}} - {{ detalles.NomP }}</td> 
+                        <td>{{ detalles.Precio | stringformat:".4f" }} €</td> 
+                        
+                    </tr> 
+                    {% endfor %} 
+                    
+                </tbody> 
+                <tfoot>
+                    <tr>
+                        <td><strong> Total </strong></td>
+                                                   
+                        <td><strong>{{total | stringformat:".4f"}} €</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <br> 
+        <br>
+       
+        <div>
+            <a href="{% url 'factvisual:facturas' %}"> atrás</a>
+        </div>  
+        
+    </body>
+</html>
